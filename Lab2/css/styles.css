@@ -1,0 +1,239 @@
+/*
+
+COLOUR PALETTE
+
+orange accent       ff8e2d
+teal                20abad
+darker teal         007c84
+off-white           eeeaeb
+
+GOOGLE FONTS 
+
+font-family: 'Poppins', sans-serif;
+font-family: 'Pacifico', cursive;
+
+*/
+
+/* UNIVERSAL STYLES */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background-color: #20abad;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: #eeeaeb;
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #20abad;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.menu > li {
+    text-align: center;
+    border-bottom: 1px solid #eeeaeb;
+    position: relative;
+}
+
+.menu > li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    color: #eeeaeb;
+    text-decoration: underline;
+}
+
+.menu > li a svg {
+    margin-left: 10px;
+    display: none; /* Hidden on mobile */
+}
+
+.submenu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #20abad;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+}
+
+.submenu li {
+    border-top: 1px solid #eee;
+}
+
+.submenu li a {
+    padding: 10px;
+    display: block;
+    color: #eeeaeb;
+    text-decoration: none;
+}
+
+.hero {
+    background-image: url('../img/grapefruit-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #eeeaeb;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: flex-end; /* Align content to the right */
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align items to the right */
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin: 0 0 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 28ch;
+    text-align: center; /* Align text to the right */
+}
+
+.button {
+    background-color: #007c84;
+    color: #eeeaeb;
+    padding: 10px 20px;
+    text-decoration: underline;
+    border-radius: 5px;
+    margin-top: 20px; /* Adjust this value to move the button further down */
+}
+
+/* MOBILE VIEW */
+@media (max-width: 720px) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu > li {
+        border-bottom: none;
+        text-align: left;
+    }
+
+    .menu > li a {
+        justify-content: flex-start; /* Align text to the left */
+        border-bottom: none;
+        margin-left: 10px;
+    }
+
+    .menu > li a svg {
+        display: none; /* Hidden on mobile */
+    }
+
+    .submenu {
+        position: relative;
+        top: 0;
+        display: block; /* Ensure dropdowns are always visible */
+    }
+
+    .hero {
+        justify-content: center; /* Center content on mobile view */
+    }
+
+    .hero-content {
+        align-items: center; /* Center items on mobile view */
+        text-align: center; /* Center text on mobile view */
+    }
+}
+
+/* DESKTOP VIEW */
+@media screen and (min-width: 720px) {
+    .menu {
+        flex-direction: row;
+    }
+
+    .menu > li {
+        border: none;
+    }
+
+    .menu > li a {
+        padding: 15px 20px;
+    }
+
+    .menu > li a svg {
+        display: inline; /* Visible on desktop */
+    }
+
+    .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+        width: 200px;
+    }
+
+    .menu > li:hover .submenu,
+    .menu > li:focus-within .submenu {
+        display: block;
+    }
+
+    .hero {
+        padding: 200px 20px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero p {
+        font-size: 24px;
+    }
+}
+
+/* LARGEST VIEW */
+@media screen and (min-width: 1024px) {
+    .hero-content {
+        max-width: none;
+    }
+
+    .menu {
+        justify-content: center;
+    }
+
+    .menu > li {
+        margin: 0 10px;
+    }
+
+    .submenu {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .menu > li > a {
+        padding: 20px;
+    }
+
+    .submenu li {
+        border-top: none;
+    }
+}
